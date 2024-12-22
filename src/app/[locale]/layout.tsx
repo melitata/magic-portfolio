@@ -6,8 +6,11 @@ import classNames from 'classnames';
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
 
-import { Inter } from 'next/font/google'
+
 import { Source_Code_Pro } from 'next/font/google';
+import { Jost } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -49,11 +52,12 @@ export async function generateMetadata(
 	}
 };
 
-const primary = Inter({
-	variable: '--font-primary',
-	subsets: ['latin'],
-	display: 'swap',
-})
+
+const primary = Jost({
+    variable: '--font-primary',
+    subsets: ['latin'],
+    display: 'swap'
+});
 
 type FontConfig = {
     variable: string;
@@ -63,10 +67,18 @@ type FontConfig = {
 	Replace with code for secondary and tertiary fonts
 	from https://once-ui.com/customize
 */
-const secondary: FontConfig | undefined = undefined;
-const tertiary: FontConfig | undefined = undefined;
-/*
-*/
+const secondary = DM_Sans({
+    variable: '--font-secondary',
+    subsets: ['latin'],
+    display: 'swap'
+});
+
+const tertiary = Raleway({
+    variable: '--font-tertiary',
+    subsets: ['latin'],
+    display: 'swap'
+});
+
 
 const code = Source_Code_Pro({
 	variable: '--font-code',
